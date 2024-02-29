@@ -427,7 +427,7 @@ screen.printCheck(cart: cart)
 
 // Початок коду сценарію для Пункт 3
 
-/*
+
 
 print("\nSCENARIO 3:\n")
 
@@ -441,7 +441,7 @@ screen.printCart(cart: cart, currency: .usd)
 // Користувач натискає кнопку зміни валюти на EUR
 screen.printCart(cart: cart, currency: .eur)
 
- */
+ 
  
 // Кінець коду сценарію для Пункт 3
 
