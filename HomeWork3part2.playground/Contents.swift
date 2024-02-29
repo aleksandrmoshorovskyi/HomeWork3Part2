@@ -265,7 +265,7 @@ class Screen {
             
             resultStringToPrint += "\n\(index + 1) "
             resultStringToPrint += "Назва продукту: \(product.name), "
-            resultStringToPrint += "Ціна: \(currency.rawValue) \(String(format: "%.2f", product.price))"
+            resultStringToPrint += "Ціна: \(currency.rawValue) \(String(format: "%.2f", productprice))"
         }
         
         resultStringToPrint += "\n---------------------------------------------------------------------"
