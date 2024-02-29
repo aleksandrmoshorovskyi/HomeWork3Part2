@@ -304,7 +304,7 @@ let cart = Cart()
 // Звертаємось до поля (змінної класу Cart), щоб записати в неї масив сконвертованих даних
 cart.products = dataMapper.products(from: receivedProducts)
 // Звертаємось до поля (змінної класу Cart), щоб записати значення discount
-cart.discount = .none
+cart.discount = .vip
 
 // Створюємо константу для зберігання "екземпляру" (instanse) Screen
 let screen = Screen()
