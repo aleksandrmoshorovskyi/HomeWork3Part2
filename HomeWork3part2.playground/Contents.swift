@@ -93,9 +93,20 @@ class Cart {
     }
     
     func clear() {
-        for index in 0 ... products.count {
+//        for index in 0 ... products.count {
+//            products.remove(at: index)
+//        }
+
+//method 1 (with while)
+        var index = products.count - 1
+        
+        while products.count > 0 {
             products.remove(at: index)
+            index -= 1
         }
+        
+//method 2 (with removeAll)
+//        products.removeAll()
     }
     
     func totalPrice() -> Double {
@@ -197,27 +208,31 @@ class Screen {
         
         var resultStringToPrint = ""
         
-        let firstLine = "--------------- ФІСКАЛЬНИЙ ЧЕК ----------------"
-        resultStringToPrint += firstLine
-        
-        let separatorLine = "\n-----------------------------------------------"
-        
-        for index in 0 ..< cart.products.count {
-            let product = cart.products[index]
-            resultStringToPrint += "\n\(index + 1)\n"
-            resultStringToPrint += product.textDescription()
+        if cart.products.count > 0 {
+            let firstLine = "--------------- ФІСКАЛЬНИЙ ЧЕК ----------------"
+            resultStringToPrint += firstLine
+            
+            let separatorLine = "\n-----------------------------------------------"
+            
+            for index in 0 ..< cart.products.count {
+                let product = cart.products[index]
+                resultStringToPrint += "\n\(index + 1)\n"
+                resultStringToPrint += product.textDescription()
+            }
+            
+            resultStringToPrint += separatorLine
+            
+            resultStringToPrint += "\nTotal price: \(String(format: "%.2f", cart.totalPrice())) UAH"
+            resultStringToPrint += "\nDiscount: \(cart.discountPercentValue())%"
+            
+            resultStringToPrint += separatorLine
+            
+            resultStringToPrint += "\nTotal price with Discount:\n\(String(format: "%.2f", cart.totalPriceWithDiscount())) UAH"
+            
+            resultStringToPrint += separatorLine + separatorLine
+        } else {
+            resultStringToPrint = "Кошик пустий. Для оформлення замовлення додайте хоча б один товар"
         }
-        
-        resultStringToPrint += separatorLine
-        
-        resultStringToPrint += "\nTotal price: \(String(format: "%.2f", cart.totalPrice())) UAH"
-        resultStringToPrint += "\nDiscount: \(cart.discountPercentValue())%"
-        
-        resultStringToPrint += separatorLine
-        
-        resultStringToPrint += "\nTotal price with Discount:\n\(String(format: "%.2f", cart.totalPriceWithDiscount())) UAH"
-        
-        resultStringToPrint += separatorLine + separatorLine
         
         print(resultStringToPrint)
     }
