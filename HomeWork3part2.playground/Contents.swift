@@ -287,7 +287,7 @@ class Screen {
 
 // Початок коду сценарію для Пункт 1
 
-/*
+
 
 print("SCENARIO 1:\n")
 
@@ -312,7 +312,7 @@ let screen = Screen()
 // і передаємо константу cart як параметр у функцію
 screen.printCheck(cart: cart)
 
-*/
+
 
 // Кінець коду сценарію для Пункт 1
 
